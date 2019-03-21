@@ -1,0 +1,24 @@
+{
+  "name": "wordpress",
+  "version": "2.0.0",
+  "description": "Custom WordPress Template",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AimHigher-Web-Design/wordpress.git"
+  },
+  "scripts": {
+    "start": "gulp sassy && gulp watch",
+    "build": "gulp sassy && gulp styleVersion"
+  },
+  "author": "AimHigher Web Design",
+  "bugs": {
+    "url": "https://github.com/AimHigher-Web-Design/wordpress/issues"
+  },
+  "homepage": "https://github.com/AimHigher-Web-Design/wordpress#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}

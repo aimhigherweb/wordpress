@@ -1,0 +1,15 @@
+.menu {
+    &.main {
+        li {
+            a {
+                font-size: 2em;
+            }
+        }
+    }
+}
+
+.container {
+    &.main {
+        padding: 0;
+    }
+}

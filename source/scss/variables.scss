@@ -1,0 +1,59 @@
+// Import stuff
+@import url('https://fonts.googleapis.com/css?family=Roboto|Space+Mono');
+
+// Colours
+$primary: #1c75bc;
+    $primary_light_10: #e8f1f8;
+    $primary_light_25: #c6dcee;
+    $primary_light_50: #8dbadd;
+    $primary_light_75: #5598cd;
+    $primary_light_90: #3283c3;
+    
+    $primary_dark_10: #030c13;
+    $primary_dark_25: #071d2f;
+    $primary_dark_50: #0e3b5e;
+    $primary_dark_75: #15588d;
+    $primary_dark_90: #196aaa;
+
+$secondary: #16a6b1;
+    $secondary_light_10: #fef4e9;
+    $secondary_light_25: #c5e9eb;
+    $secondary_light_50: #8ad2d8;
+    $secondary_light_75: #50bcc5;
+    $secondary_light_90: #2dafb9;
+
+    $secondary_dark_10: #1496a0;
+    $secondary_dark_25: #107c85;
+    $secondary_dark_50: #0b5359;
+    $secondary_dark_75: #062a2c;
+    $secondary_dark_90: #021112;
+
+$neutral: #5b5b5b;
+    $neutral_light_10: #eeeeee;
+    $neutral_light_25: #d6d6d6;
+    $neutral_light_50: #adadad;
+    $neutral_light_75: #848484;
+    $neutral_light_90: #6b6b6b;
+
+    $neutral_dark_10: #090909;
+    $neutral_dark_25: #171717;
+    $neutral_dark_50: #2e2e2e;
+    $neutral_dark_75: #444444;
+    $neutral_dark_90: #525252;
+
+
+//Fonts
+$font_regular: 400 1em 'Roboto', Arial, sans-serif;
+$font_bold: 700 1em 'Roboto', Arial, sans-serif;
+$font_headings: 700 1.5em 'Space Mono', monospace;
+
+
+// Variables
+$height_header: 15vh;
+$width_inner: 75rem;
+
+// Mixins
+@mixin transp-background() {
+    background: #fff;
+    background: rgba(#fff, 0.7);
+};

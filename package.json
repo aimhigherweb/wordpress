@@ -11,14 +11,16 @@
     "build": "gulp sassy && gulp styleVersion"
   },
   "author": "AimHigher Web Design",
-  "bugs": {
-    "url": "https://github.com/AimHigher-Web-Design/wordpress/issues"
-  },
-  "homepage": "https://github.com/AimHigher-Web-Design/wordpress#readme",
   "devDependencies": {
+    "@prettier/plugin-php": "^0.10.2",
     "gulp": "^4.0.0",
+    "gulp-prettier": "^2.1.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "prettier": "^1.16.4"
+  },
+  "dependencies": {
+    "browser-sync": "^2.26.3"
   }
 }

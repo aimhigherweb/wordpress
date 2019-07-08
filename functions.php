@@ -90,4 +90,18 @@
         $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html ); 
         return $html;
     }
+
+    function my_login_logo_one() { 
+        ?> 
+        <style type="text/css"> 
+            body.login div#login h1 a {
+                background-image: url('/wp-content/themes/wordpress/resources/img/aimhigher.svg');
+                background-position: center;
+                background-size: contain;
+                padding-bottom: 30px; 
+                width: 100%;
+            } 
+        </style>
+         <?php 
+        } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
 ?>

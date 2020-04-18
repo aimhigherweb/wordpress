@@ -1,17 +1,26 @@
-var mobileMenu = function() {
-    if(document.getElementsByClassName('nav-main active').length < 1) {
-        document.getElementById('nav-main').classList.add('active');
-    }
-    else {
-        document.getElementById('nav-main').classList.remove('active');
-    };
-};
+const mobileMenu = () => {
+	const menu = document.querySelector('nav.menu.main ul'),
+		hamburger = document.querySelector('nav.menu.main button.hamburger')
 
-window.onscroll = function() {
-        if(document.body.scrollTop > 20) {
-            document.getElementById('root').classList.add('scrolled');
-        }
-        else {
-            document.getElementById('root').classList.remove('scrolled');
-        };
-    };
+	if (document.querySelectorAll('nav.menu.main ul.active').length < 1) {
+		menu.classList.add('active')
+		hamburger.classList.add('active')
+	} else {
+		menu.classList.remove('active')
+		hamburger.classList.remove('active')
+	}
+}
+
+document
+	.querySelectorAll(
+		'.wpforms-field-email input, .wpforms-field-text input, .wpforms-field-textarea textarea',
+	)
+	.forEach(i => {
+		i.addEventListener('input', e => {
+			console.log(e.target.value)
+
+			if (e.target.value !== '') {
+				e.target.parentElement.querySelector('label').classList.add('filled')
+			}
+		})
+	})

@@ -1,0 +1,163 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+	color: $neutral;
+	font-family: $font_regular;
+	font-size: 18px;
+	margin: 0;
+	width: 100vw;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: $font_headings;
+}
+
+h1 {
+	color: $primary_dark_50;
+	font-size: 2.5em;
+}
+
+h2 {
+	color: $primary_dark_50;
+	font-size: 2em;
+}
+
+h3 {
+	color: $primary_dark_75;
+	font-size: 1.8em;
+}
+
+h4 {
+	color: $primary_dark_25;
+	font-size: 1.3em;
+}
+
+h5 {
+	color: $primary_dark_25;
+	font-size: 1.2em;
+}
+
+p {
+	&:empty {
+		display: none;
+	}
+}
+
+a {
+	color: $secondary;
+	padding: 10px;
+	text-decoration: underline;
+	text-decoration-skip-ink: auto;
+
+	&:active,
+	&:hover,
+	&:focus {
+		background-color: $primary_light_50;
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+blockquote {
+	border-left: 5px solid $primary;
+	font-family: $font_headings;
+
+	cite {
+		font-size: 0.8em;
+	}
+}
+
+hr {
+	border-color: $primary_light_50;
+}
+
+img,
+svg {
+	width: auto;
+	max-width: 100%;
+}
+
+figcaption {
+	border: none;
+	border-left: 3px solid $secondary;
+	color: $primary_dark_90;
+}
+
+nav {
+	ul,
+	li {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+form {
+	padding: 20px;
+	width: 100%;
+	max-width: 400px;
+
+	input,
+	textarea {
+		background: $primary_light_10;
+		border: 1px solid $primary_light_75;
+		color: $primary_dark_25;
+		display: block;
+		line-height: 1.2;
+		margin: 10px 0;
+		padding: 10px 15px;
+		width: 100%;
+
+		&::placeholder {
+			color: $primary_dark_25;
+		}
+	}
+}
+
+button,
+.btn,
+.wp-block-button__link {
+	background: none;
+	border: 2px solid $primary_dark_50;
+	color: $primary_dark_50;
+	cursor: pointer;
+	display: block;
+	font-size: 1em;
+	font-weight: 700;
+	margin: 10px 0;
+	padding: 10px 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:active,
+	&:hover,
+	&:focus {
+		background: $primary_dark_50;
+		color: #fff;
+	}
+
+	&.secondary {
+		background: $secondary;
+		border-color: $secondary;
+		color: #fff;
+
+		&:active,
+		&:hover,
+		&:focus {
+			background: #fff;
+			color: $secondary;
+		}
+	}
+}

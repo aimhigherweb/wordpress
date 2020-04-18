@@ -1,1 +1,3 @@
-# WordPress Base Template
+# AimHigher
+
+Custom WordPress template starter

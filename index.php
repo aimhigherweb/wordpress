@@ -3,14 +3,15 @@
  * The main template file
  *
  *
- * @package WordPress Starter Kit
+ * @package AimHigher
  * @version 1.0
  */
 
-get_header(); ?>
+    if(is_front_page()) {
+        get_template_part('layouts/home');
+    }
+    else {
+        get_template_part('layouts/default');
+    }
 
-<div class="container">
-    <h2>AimHigher WordPress Base Template</h2>
-</div>
-
-<?php get_footer();
+?>

@@ -1,16 +1,16 @@
 <?php
 /**
- * Template Name: Default Content Page
- * 
+ * The template for a blog post
  *
  *
  * @package AimHigher
  * @version 1.0
  */
 
+
 get_header(); ?>
 
-<div class="container main">
+<div class="container main blog">
     <h1><?php the_title(); ?></h1>
     <div class="content">
         <?php  

@@ -1,21 +1,26 @@
 require('dotenv').config()
 
 //Variables
-var gulp = require('gulp')
-var sass = require('gulp-sass')
-var sourcemaps = require('gulp-sourcemaps')
-var prettier = require('gulp-prettier')
-var replace = require('gulp-replace')
-var browserSync = require('browser-sync').create()
-var reload = browserSync.reload
+const gulp = require('gulp'),
+sass = require('gulp-sass'),
+sourcemaps = require('gulp-sourcemaps'),
+prettier = require('gulp-prettier'),
+replace = require('gulp-replace'),
+browserSync = require('browser-sync').create(),
+reload = browserSync.reload,
+zip = require('gulp-zip')
 
 //File Paths
-var sassFiles = 'src/scss/**/*.scss',
+const sassFiles = 'src/scss/**/*.scss',
 	mainSassFile = 'src/scss/style.scss',
 	cssFiles = '.',
 	sourceMaps = '/src/maps',
-	styleSheet = `/wp-content/themes/${process.env.THEME_NAME}/style.css`
-currentDate = new Date().toISOString()
+	styleSheet = `/wp-content/themes/${process.env.THEME_NAME}/style.css`,
+	currentDate = new Date().toISOString(),
+	buildFiles = {
+		folders: ['functions', 'layouts', 'src/fonts', 'src/img', 'src/js'],
+		files: ['footer.php', 'functions.php', 'header.php', 'index.php', 'single.php']
+	}
 
 //Compile main sass into css
 function sassy() {
@@ -41,12 +46,12 @@ function watch() {
 		'./layouts/**/*.php',
 		'./partials/**/*.php',
 		'./woocommerce/**/*.php',
-		'./source/scss/**/*.scss',
+		'./src/scss/**/*.scss',
 	]).on('change', reload)
 }
 
 function styleVersion() {
-	var thisVersion = styleSheet + '?v=' + currentDate
+	const thisVersion = styleSheet + '?v=' + currentDate
 
 	return gulp
 		.src(['header.php'])
@@ -54,6 +59,26 @@ function styleVersion() {
 		.pipe(gulp.dest('./'))
 }
 
+function build() {
+	sassy();
+	styleVersion();
+
+	buildFiles.folders.forEach(file => {
+		gulp.src(`${file}/*`)
+	.pipe(gulp.dest(`./dist/${file}`))
+	})
+
+	buildFiles.files.forEach(file => {
+		gulp.src(`./${file}`)
+			.pipe(gulp.dest('./dist/'))
+	})
+
+	return gulp.src('./dist/**')
+		.pipe(zip(`${process.env.THEME_NAME}.zip`))
+		.pipe(gulp.dest('.'))
+}
+
 exports.sassy = sassy
 exports.watch = watch
 exports.styleVersion = styleVersion
+exports.build = build

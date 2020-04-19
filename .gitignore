@@ -20,5 +20,9 @@ wp-content/plugins/hello.php
 
 node_modules/
 
-source/maps
+src/maps
 style.css
+
+dist/
+
+*.zip

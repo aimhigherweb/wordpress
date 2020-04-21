@@ -12,15 +12,7 @@
 	.answer {
 		padding: 10px 10px 10px 30px;
 
-		p {
-			&:first-child {
-				margin-top: 0;
-			}
-
-			&:last-child {
-				margin-bottom: 0;
-			}
-		}
+		@extend %p-edges;
 	}
 
 	details {

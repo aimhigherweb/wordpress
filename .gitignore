@@ -23,6 +23,6 @@ node_modules/
 src/maps
 style.css
 
-dist/
+_dist/
 
 *.zip

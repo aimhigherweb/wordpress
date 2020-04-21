@@ -68,3 +68,22 @@ $font_headings: 'Recursive', Arial, sans-serif;
 	bottom: 0;
 	left: 0;
 }
+
+%p-edges {
+	p {
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// Mixins
+@mixin grid() {
+	@supports(grid-template-areas: '.') {
+		@content;
+	}
+}

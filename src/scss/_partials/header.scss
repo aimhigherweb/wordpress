@@ -134,7 +134,7 @@ header {
 			li {
 				padding: 0 10px;
 
-				&:last-child {
+				&:last-child:not(.current_page_item) {
 					a {
 						border: 0;
 					}

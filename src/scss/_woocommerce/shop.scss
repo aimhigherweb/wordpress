@@ -1,0 +1,81 @@
+.woocommerce-ordering {
+	select {
+		border: 1px solid $primary;
+		padding: 5px 10px;
+	}
+}
+
+.woocommerce {
+	ul.products {
+		display: flex;
+		margin: -20px;
+
+		li.product {
+			margin: 20px;
+			max-width: 300px;
+
+			.onsale {
+				margin: 0;
+				top: -1.5em;
+				right: -1.5em;
+			}
+
+			.price {
+				color: $primary;
+				font-size: 1.2em;
+
+				del {
+					font-size: 0.8em;
+				}
+
+				ins {
+					background: $secondary;
+					border-radius: 10px;
+					color: $main;
+					padding: 10px;
+					text-decoration: none;
+				}
+			}
+		}
+
+		@include grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-gap: 30px;
+			margin: 0;
+
+			li.product {
+				margin: 0;
+			}
+		}
+	}
+
+	a {
+		border: 2px solid transparent;
+		display: block;
+
+		&:active, &:hover, &:focus {
+			background: $primary_light_10;
+			border-color: $primary;
+		}
+
+		&.button {
+			background: $primary;
+			border: 2px solid $primary;
+			color: #fff;
+			width: auto;
+
+			&:active, &:hover, &:focus {
+				background: #fff;
+				color: $primary;
+			}
+		}
+	}
+
+	span.onsale {
+		background: $secondary;
+		line-height: 3.5;
+		height: 4em;
+		width: 4em;
+	}
+}

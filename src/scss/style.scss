@@ -14,5 +14,12 @@ Version: 1.0
 @import './_partials/header.scss';
 @import './_partials/footer.scss';
 
+@import './_layouts/blog.scss';
+
 @import './_blocks/team.scss';
 @import './_blocks/faq.scss';
+
+.content {
+	@import './_woocommerce/reset.scss';
+	@import './_woocommerce/shop.scss';
+}

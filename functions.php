@@ -32,13 +32,8 @@
         else {
             return $items;
         }
-    }
-
-    // Add Featured Image Support
-    function aimhigher_post_thumbnails() {
-        add_theme_support( 'post-thumbnails' );
-    };
-
-    add_action( 'after_setup_theme', 'aimhigher_post_thumbnails' );
+    }   
     
+    // Add new custom image sizes
+    add_image_size( 'med-thumb', 300, 300, true );
 ?>

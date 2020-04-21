@@ -184,4 +184,16 @@
     }
      
     add_filter('page_row_actions', 'rd_duplicate_post_link', 10, 2);
+
+    // Add Featured Image Support
+    function aimhigher_post_thumbnails() {
+        add_theme_support( 'post-thumbnails' );
+    };
+
+    add_action( 'after_setup_theme', 'aimhigher_post_thumbnails' );
+
+    // Add is_blog check
+    function is_blog () {
+        return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
+    }
 ?>

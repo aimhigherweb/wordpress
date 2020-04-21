@@ -38,6 +38,7 @@ function watch() {
 	browserSync.init({
 		port: process.env.PORT || 3000,
 		proxy: process.env.WP_URL,
+		open: false
 	})
 
 	gulp.watch(sassFiles, sassy)
@@ -54,14 +55,13 @@ function styleVersion() {
 	const thisVersion = styleSheet + '?v=' + currentDate
 
 	return gulp
-		.src(['header.php'])
+		.src(['dist/header.php'])
 		.pipe(replace(styleSheet, thisVersion))
 		.pipe(gulp.dest('./'))
 }
 
 function build() {
 	sassy();
-	styleVersion();
 
 	buildFiles.folders.forEach(file => {
 		gulp.src(`${file}/*`)
@@ -72,6 +72,8 @@ function build() {
 		gulp.src(`./${file}`)
 			.pipe(gulp.dest('./dist/'))
 	})
+
+	styleVersion();
 
 	return gulp.src('./dist/**')
 		.pipe(zip(`${process.env.THEME_NAME}.zip`))

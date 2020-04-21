@@ -41,6 +41,7 @@ $neutral: #4c4d4e;
 $good: #46be2d;
 $warning: #FF7900;
 $fail: #b50400;
+$main: #302e2c;
 
 
 $gradient_linear: linear-gradient(
@@ -53,7 +54,7 @@ $gradient_linear: linear-gradient(
 //Fonts
 @font-face {
 	font-family: 'Recursive';
-	src: url('../../resources/fonts/recursive.ttf') format('truetype');
+	src: url('./src/fonts/recursive.ttf') format('truetype');
 }
 
 $font_regular: 'Recursive', Arial, sans-serif;

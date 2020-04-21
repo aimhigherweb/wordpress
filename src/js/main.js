@@ -1,13 +1,10 @@
 const mobileMenu = () => {
-	const menu = document.querySelector('nav.menu.main ul'),
-		hamburger = document.querySelector('nav.menu.main button.hamburger')
+	const menu = document.querySelector('nav.main')
 
-	if (document.querySelectorAll('nav.menu.main ul.active').length < 1) {
+	if (!menu.classList.contains('active')) {
 		menu.classList.add('active')
-		hamburger.classList.add('active')
 	} else {
 		menu.classList.remove('active')
-		hamburger.classList.remove('active')
 	}
 }
 

@@ -6,9 +6,13 @@ Author URI: https://aimhigherweb.design
 Version: 1.0
 */
 
-@import 'variables.scss';
+@import './_variables.scss';
 
-@import 'global.scss';
+@import './_global.scss';
+@import './_partials/content.scss';
 
-@import './partials/header.scss';
-@import './partials/footer.scss';
+@import './_partials/header.scss';
+@import './_partials/footer.scss';
+
+@import './_blocks/team.scss';
+@import './_blocks/faq.scss';

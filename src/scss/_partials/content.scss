@@ -1,0 +1,13 @@
+header, main, footer {
+	margin: 0 auto;
+	padding: 10px;
+	width: 90vw;
+	max-width: 1200px;
+}
+
+.home {
+	h1 {
+		position: absolute;
+		right: -200vw;
+	}
+}

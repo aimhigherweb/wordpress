@@ -36,7 +36,7 @@
                     array(
                         'param' => 'nav_menu_item',
                         'operator' => '==',
-                        'value' => '3',
+                        'value' => '4',
                     ),
                 ),
             ),

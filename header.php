@@ -13,40 +13,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="profile" href="http://gmpg.org/xfn/11" />
 
-        <link href="/wp-content/themes/aimhigher/style.css?v=2020-04-18T02:13:32.581Z?v=2020-04-17T12:48:47.664Z?v=2020-04-17T09:43:06.792Z?v=2019-09-08T07:37:49.353Z?v=2019-09-06T13:50:05.364Z" rel="stylesheet" />
+        <link href="<?php echo get_template_directory_uri(); ?>/style.css" rel="stylesheet" />
         
         <title>AimHigher</title>
         <meta name="description" content="WordPress Template" />
 
-        <meta property="og:title" content="WordPress Template" />
-        <meta property="og:image" content="" />
-        <meta property="og:description" content="WordPress Template" />
-
-        <meta name="twitter:title" content="WordPress Template" />
-        <meta name="twitter:description" content="WordPress Template" />
-        <meta name="twitter:image" content="WordPress Template" />
-
         <?php wp_head(); ?>
     </head>
 
-<body class="<?php if (is_front_page()) {
-	echo 'home image-header';
-} elseif (get_field('image_header')) {
-	echo 'image-header';
-} ?>">
+<body class="<?php if (is_front_page()) {echo 'home';} ?>">
     <header>
         <a href="/" class="site-logo">
             <?php
             $logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0];
-            echo file_get_contents($logo);
+
+            if(preg_match('/\.svg$/', $logo)) {
+                echo file_get_contents($logo);
+            }
+            else {
+                echo '<img src="' . $logo . '" />';
+            }
+            
             ?>
         </a>
 
 
 
         <?php
-        $hamburger =
-        	get_site_url() . '/wp-content/themes/aimhigher/resources/img/hamburger_close.svg';
+        $hamburger = get_template_directory_uri() . './src/img/hamburger.svg';
         $menu_toggle =
         	'<button class="hamburger" onClick="mobileMenu()">' .
         	file_get_contents($hamburger) .
@@ -61,6 +55,4 @@
         ?>
     </header>
 
-    <main  class="<?php if (is_front_page()) {
-    	echo 'home';
-    } ?>">
+    <main  class="<?php if (is_front_page()) {echo 'home';} ?>">

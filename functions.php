@@ -4,10 +4,15 @@
     require_once(__DIR__ . '/functions/gutenberg.php');
 
     // Define Nav Menus
-    register_nav_menus(array (
-        'main_menu' => 'Main Menu',
-        'social_menu' => 'Social Menu',
-    ));
+    function aimhigher_nav_menus() {
+        register_nav_menus(array (
+            'main_menu' => 'Main Menu',
+            'social_menu' => 'Social Menu',
+            'footer_menu' => 'Footer Menu',
+        ));
+    };
+
+    add_action('init', 'aimhigher_nav_menus');
 
     //Add Social Icons to Nav Menu
     add_filter('wp_nav_menu_objects', 'social_menu_icons', 10, 2);
@@ -18,7 +23,7 @@
                 $icon = file_get_contents(get_field('icon', $item));
 
                 if($icon) {
-                    $item->title = $icon . $item->title;
+                    $item->title = $icon . '<span>' . $item->title . '</span>';
                 }
             }
 

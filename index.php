@@ -7,11 +7,10 @@
  * @version 1.0
  */
 
-    if(is_front_page()) {
-        get_template_part('layouts/home');
-    }
-    else {
-        get_template_part('layouts/default');
-    }
+    get_header(); 
+
+    get_template_part('layouts/default');
+
+    get_footer();
 
 ?>

@@ -8,7 +8,7 @@ html, body {
 }
 
 body {
-	color: $neutral;
+	color: $main;
 	font-family: $font_regular;
 	font-size: 18px;
 	margin: 0;
@@ -64,7 +64,8 @@ a {
 	&:active,
 	&:hover,
 	&:focus {
-		background-color: $primary_light_50;
+		background-color: $secondary;
+		color: $main;
 		text-decoration: none;
 		outline: none;
 	}
@@ -130,8 +131,8 @@ button,
 .btn,
 .wp-block-button__link {
 	background: none;
-	border: 2px solid $primary_dark_50;
-	color: $primary_dark_50;
+	border: 2px solid $primary;
+	color: $primary;
 	cursor: pointer;
 	display: block;
 	font-size: 1em;
@@ -144,7 +145,7 @@ button,
 	&:active,
 	&:hover,
 	&:focus {
-		background: $primary_dark_50;
+		background: $primary;
 		color: #fff;
 	}
 

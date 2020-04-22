@@ -1,0 +1,10 @@
+.content .woocommerce {
+	@import './reset.scss';
+	@import './global.scss';
+	@import './shop.scss';
+	@import './cart.scss';
+
+	div.single-product {
+		@import './product.scss';
+	}
+}

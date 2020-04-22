@@ -18,8 +18,6 @@ Version: 1.0
 
 @import './_blocks/team.scss';
 @import './_blocks/faq.scss';
+@import './_blocks/banner.scss';
 
-.content {
-	@import './_woocommerce/reset.scss';
-	@import './_woocommerce/shop.scss';
-}
+@import './_woocommerce/main.scss';

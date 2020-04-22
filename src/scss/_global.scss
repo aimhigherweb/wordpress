@@ -15,6 +15,10 @@ body {
 	width: 100vw;
 }
 
+:root {
+	--radioWidth: 20px;
+}
+
 
 h1,
 h2,
@@ -127,6 +131,85 @@ form {
 	}
 }
 
+input {
+	&[type="radio"], &[type="checkbox"] {
+		display: none;
+
+		+ label {
+			cursor: pointer;
+			display: flex;
+			min-height: var(--radioWidth);
+			margin: 10px 0;
+			position: relative;
+
+			&:before, &:after {
+				display: block;
+				color: $primary;
+				flex-shrink: 0;
+			}
+
+			&:before {
+				border: 2px solid $neutral;
+				background: $neutral_light_10;
+				content: '';
+				height: var(--radioWidth);
+				margin-right: 10px;
+				width: var(--radioWidth);
+			}
+
+			&:after {
+				font-size: var(--radioWidth);
+				font-weight: bold;
+				line-height: 1;
+				position: absolute;
+			}
+		}
+	}
+
+	&[type="radio"] {
+		+ label {
+			&:before, &:after {
+				border-radius: 50%;
+			}
+
+			&:after {
+				background: currentColor;
+				height: calc(var(--radioWidth) - 4px);
+				width: calc(var(--radioWidth) - 4px);
+				top: 4px;
+				left: 4px;
+			}
+		}
+
+		&:checked {
+			+ label {
+				&:after {
+					content: '';
+				}
+			}
+		}
+	}
+
+	&[type="checkbox"] {
+		+ label {
+			&:after {
+				height: calc(var(--radioWidth));
+				width: calc(var(--radioWidth));
+				top: 2px;
+				left: 4px;
+			}
+		}
+
+		&:checked {
+			+ label {
+				&:after {
+					content: '✓';
+				}
+			}
+		}
+	}
+}
+
 button,
 .btn,
 .wp-block-button__link {
@@ -140,7 +223,6 @@ button,
 	margin: 10px 0;
 	padding: 10px 20px;
 	text-decoration: none;
-	text-transform: uppercase;
 
 	&:active,
 	&:hover,

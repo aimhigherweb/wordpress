@@ -8,6 +8,11 @@ html, body {
 }
 
 body {
+	--primary: #{$primary};
+	--secondary: #{$secondary};
+	--neutral: #{$neutral};
+	--primary_light: #{$primary_light_25};
+
 	color: $main;
 	font-family: $font_regular;
 	font-size: 18px;

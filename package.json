@@ -12,17 +12,17 @@
   },
   "author": "AimHigher Web Design",
   "devDependencies": {
-    "@prettier/plugin-php": "^0.14.0",
+    "@prettier/plugin-php": "^0.16.2",
     "gulp": "^4.0.0",
     "gulp-prettier": "^3.0.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "prettier": "^2.0.5"
+    "gulp-sourcemaps": "^3.0.0",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.14",
     "dotenv": "^8.2.0",
-    "gulp-zip": "^5.0.1"
+    "gulp-zip": "^5.1.0"
   }
 }
